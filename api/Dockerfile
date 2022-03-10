@@ -1,6 +1,6 @@
 FROM ubi8/python-39
 COPY . /opt/app-root/src
-RUN pip install --upgrade pip
+RUN ls
 RUN pip install -r requirements.txt
 EXPOSE 5000
 
