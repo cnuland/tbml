@@ -25,7 +25,7 @@ spec:
     description: tls verification
   - name: working-dir
     type: string
-    default: ""
+    default: "api"
     description: default working directory to build from
   tasks:
   - name: fetch-repository
