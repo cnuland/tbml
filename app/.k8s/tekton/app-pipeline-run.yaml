@@ -1,0 +1,24 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: tbml-app-build
+spec:
+  pipelineRef:
+    name: tbml-app-pipeline
+  params:
+  - name: deployment-name
+    value: "tbml-app"
+  - name: git-url
+    value: "https://github.com/cnuland/tbml.git"
+  - name: git-revision
+    value: "main"
+  - name: IMAGE
+    value: "image-registry.openshift-image-registry.svc:5000/tbml/tbml-app"
+  - name: TLSVERIFY
+    value: "false"
+  - name: working-dir
+    value: "app"
+  workspaces:
+  - name: shared-workspace
+    persistentvolumeclaim:
+      claimName: tekton-app-pvc
