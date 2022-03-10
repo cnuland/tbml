@@ -1,4 +1,4 @@
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1alpha1
 kind: Pipeline
 metadata:
   name: tbml-api-pipeline
@@ -30,7 +30,7 @@ spec:
   tasks:
   - name: fetch-repository
     taskRef:
-      name: git-clone
+      name: git-clone-1-6-0
       kind: ClusterTask
     workspaces:
     - name: output
