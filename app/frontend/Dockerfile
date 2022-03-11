@@ -1,10 +1,10 @@
 
 FROM ubi8/nodejs-14:latest
-
-# Copy package.json and package-lock.json
-COPY package*.json .
 RUN ls
 RUN pwd
+# Copy package.json and package-lock.json
+COPY package*.json .
+
 # Install app dependencies
 RUN npm install --production
 
