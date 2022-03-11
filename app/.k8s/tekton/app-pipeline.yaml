@@ -44,8 +44,8 @@ spec:
       value: $(params.git-revision)
   - name: build-image
     taskRef:
-      name: buildah
-      kind: ClusterTask
+      name: tbml-buildah
+      kind: Task
     params:
     - name: IMAGE
       value: $(params.IMAGE)
