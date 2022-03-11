@@ -1,9 +1,9 @@
 
 FROM ubi8/nodejs-14:latest
-RUN app/frontend/ls
+RUN ls app/frontend
 RUN pwd
 # Copy package.json and package-lock.json
-COPY app/frontend/package*.json .
+COPY app/frontend/package*.json /opt/app-root/src
 
 # Install app dependencies
 RUN npm install --production
