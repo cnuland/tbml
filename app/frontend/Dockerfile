@@ -1,6 +1,6 @@
 
 FROM ubi8/nodejs-14:latest
-RUN ls app
+RUN ls .
 RUN pwd
 # Copy package.json and package-lock.json
 COPY app/frontend/package*.json .
