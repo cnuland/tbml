@@ -1,9 +1,9 @@
 
 FROM ubi8/nodejs-14:latest
-RUN ls app/frontend
+RUN ls /workspace/output/app/frontend
 RUN pwd
 # Copy package.json and package-lock.json
-COPY app/frontend/package*.json /opt/app-root/src
+COPY /workspace/output/app/frontend/package*.json .
 
 # Install app dependencies
 RUN npm install --production
@@ -13,7 +13,7 @@ FROM registry.access.redhat.com/ubi8/nodejs-14-minimal:latest
 
 # Install app dependencies
 COPY --from=0 /opt/app-root/src/node_modules /opt/app-root/src/node_modules
-COPY app/frontend/. /opt/app-root/src
+COPY /workspace/output/app/frontend/. /opt/app-root/src
 
 ENV NODE_ENV production
 ENV PORT 3000
