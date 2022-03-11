@@ -2,6 +2,7 @@
 FROM ubi8/nodejs-14:latest
 RUN ls .
 RUN pwd
+
 # Copy package.json and package-lock.json
 COPY app/frontend/package*.json .
 
@@ -14,6 +15,7 @@ FROM registry.access.redhat.com/ubi8/nodejs-14-minimal:latest
 # Install app dependencies
 COPY --from=0 /opt/app-root/src/node_modules /opt/app-root/src/node_modules
 COPY app/frontend/. /opt/app-root/src
+RUN npm install @vue/cli@4.5.13
 
 ENV NODE_ENV production
 ENV PORT 3000
