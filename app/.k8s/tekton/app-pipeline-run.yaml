@@ -17,7 +17,7 @@ spec:
   - name: TLSVERIFY
     value: "false"
   - name: working-dir
-    value: "app"
+    value: "app/frontend"
   workspaces:
   - name: shared-workspace
     persistentvolumeclaim:

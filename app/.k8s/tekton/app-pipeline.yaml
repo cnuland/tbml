@@ -25,7 +25,7 @@ spec:
     description: tls verification
   - name: working-dir
     type: string
-    default: "app"
+    default: "app/frontend"
     description: default working directory to build from
   tasks:
   - name: fetch-repository
