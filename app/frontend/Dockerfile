@@ -15,7 +15,7 @@ RUN npm install
 #FROM registry.access.redhat.com/ubi8/nodejs-14-minimal:latest
 
 # Install app dependencies
-ENV PATH  /opt/app-root/src/node_modules/.bin:$PATH
+#ENV PATH  /opt/app-root/src/node_modules/.bin:$PATH
 RUN ls /opt/app-root/src
 #COPY --from=0 /opt/app-root/src/node_modules /opt/app-root/src/node_modules
 COPY app/frontend/. /opt/app-root/src
