@@ -12,6 +12,9 @@ COPY app/frontend/package*.json .
 
 # Install app dependencies
 RUN npm install --production=false
+
+COPY app/frontend/. /opt/app-root/src
+
 RUN npm run-script build
 
 # Copy the dependencies into a minimal Node.js image
