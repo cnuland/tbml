@@ -7,7 +7,7 @@ RUN pwd
 COPY app/frontend/package*.json .
 
 # Install app dependencies
-RUN npm install --production
+RUN npm install --production=false
 
 # Copy the dependencies into a minimal Node.js image
 FROM registry.access.redhat.com/ubi8/nodejs-14-minimal:latest
@@ -20,7 +20,7 @@ COPY app/frontend/. /opt/app-root/src
 RUN ls .
 RUN pwd
 
-ENV NODE_ENV production
+ENV NODE_ENV development
 ENV PORT 3000
 EXPOSE 3000
 CMD ["npm", "run", "serve"]
