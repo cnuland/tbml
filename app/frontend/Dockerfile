@@ -22,7 +22,7 @@ FROM ubi8/nginx-118:latest
 
 # Install app dependencies
 
-COPY --from=0 /opt/app-root/src/dist /usr/share/nginx/html/dist
+COPY --from=0 /opt/app-root/src/dist /usr/share/nginx/html
 
 EXPOSE 8080
 
