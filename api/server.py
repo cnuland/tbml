@@ -7,7 +7,7 @@ origins = [
     "http://localhost:8080",
     "https://ibml-app-tbml.apps.okd4.cjlabs.dev",
     "http://ibml-app-tbml.apps.okd4.cjlabs.dev",
-    "ibml-app-tbml.apps.okd4.cjlabs.dev"],
+    "ibml-app-tbml.apps.okd4.cjlabs.dev",
 ]
 
 app.add_middleware(
