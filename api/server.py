@@ -3,12 +3,14 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:8080",
-    "https://ibml-app-tbml.apps.okd4.cjlabs.dev",
-    "http://ibml-app-tbml.apps.okd4.cjlabs.dev",
-    "ibml-app-tbml.apps.okd4.cjlabs.dev",
-]
+#origins = [
+#    "http://localhost:8080",
+#    "https://ibml-app-tbml.apps.okd4.cjlabs.dev",
+#    "http://ibml-app-tbml.apps.okd4.cjlabs.dev",
+#    "ibml-app-tbml.apps.okd4.cjlabs.dev",
+#]
+
+origins = ['*']
 
 app.add_middleware(
     CORSMiddleware,
