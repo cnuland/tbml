@@ -7,7 +7,7 @@ import router from './router';
 
 
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = 'http://localhost:5000/';  // the FastAPI backend
+axios.defaults.baseURL = 'http://localhost:8080/';  // the FastAPI backend
 
 Vue.config.productionTip = false;
 
