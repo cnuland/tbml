@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from db.register import register_tortoise
 from db.config import TORTOISE_ORM
+from tortoise.contrib.fastapi import register_tortoise
 
 app = FastAPI()
 
@@ -23,7 +23,9 @@ app.add_middleware(
 )
 
 # Generate database schema
-register_tortoise(app, config=TORTOISE_ORM, generate_schemas=False)
+register_tortoise(app, 
+                  config=TORTOISE_ORM, 
+                  generate_schemas=False)
 
 @app.get("/")
 def home():
