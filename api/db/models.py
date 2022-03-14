@@ -20,7 +20,7 @@ class Meals(models.Model):
     id = fields.IntField(pk=True)
     name = fields.CharField(max_length=225, required=True)
     created_on = fields.DatetimeField(auto_now_add=True)
-    nutriments = fields.ManyToManyField("app.Nutriments", related_name='meals', through='nutriments_in_meal')
+    nutriments = fields.ManyToManyField("models.Nutriments", related_name='meals', through='nutriments_in_meal')
 
 class Symptoms(models.Model):
     id = fields.IntField(pk=True)
@@ -33,7 +33,7 @@ class JournalEntry(models.Model):
     created_on = fields.DatetimeField(auto_now_add=True)
     entry = fields.TextField(required=True)
     health_rating = fields.SmallIntField(default=0)
-    symptoms = fields.ManyToManyField("app.Symptoms", related_name='symptoms', through='symptoms_in_journal')
+    symptoms = fields.ManyToManyField("models.Symptoms", related_name='symptoms', through='symptoms_in_journal')
     
 class Events(models.Model):
     id = fields.IntField(pk=True)
