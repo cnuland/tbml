@@ -5,6 +5,8 @@ from tortoise import Tortoise
 from db.config import TORTOISE_ORM
 from db.register import register_tortoise
 
+from routes import meals
+
 Tortoise.init_models(["db.models"], "models")
 
 app = FastAPI()
@@ -24,6 +26,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(meals.router)
 
 # Generate database schema
 register_tortoise(app, 

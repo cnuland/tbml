@@ -1,4 +1,6 @@
 from tortoise.contrib.pydantic import pydantic_model_creator
+from typing import Optional
+from pydantic import BaseModel
 
 from db.models import Meals
 
@@ -12,3 +14,6 @@ MealsOutSchema = pydantic_model_creator(
 MealsDatabaseSchema = pydantic_model_creator(
     Meals, name="Meal", exclude=["created_on"]
 )
+
+class UpdateMeal(BaseModel):
+    name: Optional[str]
