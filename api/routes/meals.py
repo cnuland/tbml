@@ -57,7 +57,7 @@ async def update_meal(
     "/meal/{meal_id}",
     responses={404: {"model": HTTPNotFoundError}},
 )
-async def delete_note(
+async def delete_meal(
     meal_id: int
 ):
-    return await crud.delete_note(meal_id)
+    return await crud.delete_meal(meal_id)
