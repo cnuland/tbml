@@ -1,6 +1,5 @@
 from fastapi import HTTPException
 from tortoise.exceptions import DoesNotExist
-from api.db.models import Symptoms
 
 from db.models import JournalEntry
 from schemas.journal_entry import JournalEntryOutSchema
