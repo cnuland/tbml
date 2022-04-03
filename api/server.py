@@ -5,9 +5,9 @@ from tortoise import Tortoise
 from db.config import TORTOISE_ORM
 from db.register import register_tortoise
 
-from routes import meals, journal_entry, nutriments, symptoms, events
-
 Tortoise.init_models(["db.models"], "models")
+
+from routes import meals, journal_entry, nutriments, symptoms, events
 
 app = FastAPI()
 

@@ -33,7 +33,7 @@ class JournalEntry(models.Model):
     created_on = fields.DatetimeField(auto_now_add=True)
     entry = fields.TextField(required=True)
     health_rating = fields.SmallIntField(default=0)
-    symptoms = fields.ManyToManyField("models.Symptoms", related_name='symptoms', through='symptoms_in_journal')
+    symptoms = fields.ManyToManyField("models.Symptoms", related_name='journal_entry', through='symptoms_in_journal')
     
 class Events(models.Model):
     id = fields.IntField(pk=True)
