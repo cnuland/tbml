@@ -14,9 +14,9 @@ async def get_nutriment(nutriment_id) -> NutrimentsOutSchema:
 
 
 async def create_nutriment(meal) -> NutrimentsOutSchema:
-    meal_dict = meal.dict(exclude_unset=True)
-    meal_obj = await Nutriments.create(**meal_dict)
-    return await NutrimentsOutSchema.from_tortoise_orm(meal_obj)
+    nutriment_dict = meal.dict(exclude_unset=True)
+    nutriment_obj = await Nutriments.create(**nutriment_dict)
+    return await NutrimentsOutSchema.from_tortoise_orm(nutriment_obj)
 
 
 async def update_nutriment(nutriment_id, meal) -> NutrimentsOutSchema:

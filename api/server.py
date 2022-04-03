@@ -5,7 +5,7 @@ from tortoise import Tortoise
 from db.config import TORTOISE_ORM
 from db.register import register_tortoise
 
-from routes import meals
+from routes import meals, journal_entry, nutriments, symptoms, events
 
 Tortoise.init_models(["db.models"], "models")
 
@@ -28,6 +28,10 @@ app.add_middleware(
 )
 
 app.include_router(meals.router)
+app.include_router(nutriments.router)
+app.include_router(events.router)
+app.include_router(symptoms.router)
+app.include_router(journal_entry.router)
 
 # Generate database schema
 register_tortoise(app, 

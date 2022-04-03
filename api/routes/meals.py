@@ -24,7 +24,7 @@ async def get_meals():
     response_model=MealsOutSchema)
 async def get_meal(meal_id: int) -> MealsOutSchema:
     try:
-        return await crud.get_meals(meal_id)
+        return await crud.get_meal(meal_id)
     except DoesNotExist:
         raise HTTPException(
             status_code=404,
@@ -33,7 +33,7 @@ async def get_meal(meal_id: int) -> MealsOutSchema:
 
 
 @router.post(
-    "/meals", response_model=MealsOutSchema
+    "/meal", response_model=MealsOutSchema
 )
 async def create_meal(
     meal: MealsInSchema
